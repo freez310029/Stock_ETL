@@ -1,8 +1,5 @@
 import configparser
 from google.oauth2 import service_account
-from google.auth.exceptions import DefaultCredentialsError
-from google.cloud import bigquery
-from pandas_gbq import to_gbq
 from get_data import fetch_stock_data
 from upload import upload_to_bigquery
 
