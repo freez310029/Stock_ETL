@@ -1,0 +1,25 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: stock-etl-cron
+spec:
+  schedule: "0 23 * * *"  # UTC 23:00 (台灣時間 07:00) 每天執行一次
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: stock-etl
+            image: gcr.io/YOUR_PROJECT_ID/stock-etl:latest  # 替換為你的 GCR 映像
+            env:
+            - name: GOOGLE_APPLICATION_CREDENTIALS
+              value: "/secrets/service-account.json"
+            volumeMounts:
+            - name: gcp-service-account
+              mountPath: "/secrets"
+              readOnly: true
+          restartPolicy: OnFailure
+          volumes:
+          - name: gcp-service-account
+            secret:
+              secretName: gcp-service-account-secret

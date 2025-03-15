@@ -1,0 +1,25 @@
+# Python 虛擬環境
+venv/
+.env
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# PyCharm 設定
+.idea/
+
+# Windows 系統檔
+Thumbs.db
+.DS_Store
+
+# BigQuery 認證 (請勿提交到 GitHub)
+service-account.json
+
+# 日誌 & 暫存檔案
+logs/
+*.log
+*.out
+*.tmp
+
+core/config.ini
