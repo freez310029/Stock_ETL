@@ -6,13 +6,13 @@
 
 ## 專案流程
 
-1. **ETL 流程(ETL/main.py)**：
+1. **ETL 流程 (ETL/main.py)**：
    - 使用 Python 編寫的爬蟲程式，從 Yahoo Finance 等來源抓取台灣股市的每日收盤價（例如 2330 和 0050 兩檔股票）。
    - 使用 Google Cloud BigQuery 儲存抓取的股市數據。
    - 每天定時抓取數據並進行處理，並將結果儲存於 BigQuery。
    - 可在Env.py中新增標的。
 
-2. ** Docker 建置與部署(Dockerfile, dep.sh)**：
+2. ** Docker 建置與部署 (Dockerfile, dep.sh)**：
    - 使用 Docker 打包爬蟲程式，使其可以輕鬆部署和運行於 GCP。
    - 使用 `docker build`、`docker tag`、`docker push` 命令將容器上傳到 GCP 的 Container Registry。
 
@@ -23,19 +23,3 @@
 4. **私鑰管理**：
    - 使用本地儲存的 Google Cloud 私鑰來進行身份驗證，並安全地將數據上傳至 GCP。
 
-## 環境要求
-
-- Python 3.9+
-- Docker
-- Google Cloud Platform (GCP) 帳戶
-- GKE (Google Kubernetes Engine)
-- BigQuery
-
-## 安裝步驟
-
-1. **安裝必要套件**
-
-   在專案根目錄下執行以下命令，安裝所需的 Python 套件：
-
-   ```bash
-   pip install -r requirements.txt
