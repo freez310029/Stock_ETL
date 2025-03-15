@@ -10,7 +10,7 @@ spec:
         spec:
           containers:
           - name: stock-etl
-            image: gcr.io/YOUR_PROJECT_ID/stock-etl:latest  # 替換為你的 GCR 映像
+            image: asia-east1-docker.pkg.dev/YOUR_PROJECT_ID/stock-etl:latest  # 替換為你的 GCR 映像
             env:
             - name: GOOGLE_APPLICATION_CREDENTIALS
               value: "/secrets/service-account.json"
