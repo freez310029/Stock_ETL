@@ -7,9 +7,9 @@
 ## 專案流程
 
 1. **ETL 流程 (ETL/main.py)**：
-   - 使用 Python 編寫的爬蟲程式，從 Yahoo Finance 等來源抓取台灣股市的每日收盤價（例如 2330 和 0050 兩檔股票）。
+   - 使用 Python 編寫的爬蟲程式，從 Yahoo Finance 等來源抓取台灣股市的每日收盤價 (ETL/get_data.py)。
    - 使用 Google Cloud BigQuery 儲存抓取的股市數據。
-   - 每天定時抓取數據並進行處理，並將結果儲存於 BigQuery。
+   - 每天定時抓取數據並進行處理，並將結果儲存於 BigQuery (ETL/upload.py)。
    - 可在Env.py中新增標的。
 
 2. **Docker 建置與部署 (Dockerfile, dep.sh)**：
