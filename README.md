@@ -12,11 +12,11 @@
    - 每天定時抓取數據並進行處理，並將結果儲存於 BigQuery。
    - 可在Env.py中新增標的。
 
-2. ** Docker 建置與部署 (Dockerfile, dep.sh)**：
+2. **Docker 建置與部署 (Dockerfile, dep.sh)**：
    - 使用 Docker 打包爬蟲程式，使其可以輕鬆部署和運行於 GCP。
    - 使用 `docker build`、`docker tag`、`docker push` 命令將容器上傳到 GCP 的 Container Registry。
 
-3. ** GKE 排程任務 (gke/cronjob.yaml)**：
+3. **GKE 排程任務 (gke/cronjob.yaml)**：
    - 使用 GKE 配置 CronJob，自動化運行 ETL 任務，抓取股市數據並將其推送到 BigQuery。
    - 每天定時執行 ETL 任務。
 
